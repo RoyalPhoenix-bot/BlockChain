@@ -1,0 +1,3 @@
+The correct folder containing the second assignment is "Assgn2".
+I was trying to push a whole folder to github and accidently
+pushed another folder.
