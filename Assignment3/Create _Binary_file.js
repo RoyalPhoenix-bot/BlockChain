@@ -60,7 +60,7 @@ for(var i=0;i<counto;i++){
     console.log('Enter the number of coins for output #',i+1,':');
     var coins = readline.question();
     var bicoins='';
-    for(var j=parseInt(bicoins).toString(2).length;j<32;j++){
+    for(var j=parseInt(bicoins).toString(2).length;j<64;j++){
         bicoins+='0';
     }
     bicoins += parseInt(coins).toString(2);
