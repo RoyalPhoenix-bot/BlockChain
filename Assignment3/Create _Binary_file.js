@@ -26,6 +26,12 @@ var inp_data= bincounti;
 for(var i=0;i<counti;i++){
     console.log("Enter Transaction ID(in hex format) for input #",i+1,":");
     var id = readline.question();
+    //converting id from hex to int.
+    var binid='';
+    for(var j=parseInt(id,16).toString(2).length;j<32;j++){
+        binid+='0';
+    }
+    binid+= parseInt(id,16).toString(2);
     console.log("Enter index of output for input #",i+1,":");
     var index = readline.question();
     var binindex='';
@@ -40,7 +46,7 @@ for(var i=0;i<counti;i++){
     }
     binl_sign += parseInt(l_sign).toString(2);
     var sign = readline.question("Enter the signature(in hex format) ");
-    inp_data += id + binindex + binl_sign + sign;
+    inp_data += binid + binindex + binl_sign + sign;
 }
 // console.log(inp_data);
 var counto= readline.question('Enter the number of outputs: ');
