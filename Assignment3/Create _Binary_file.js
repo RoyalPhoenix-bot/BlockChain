@@ -41,10 +41,10 @@ for(var i=0;i<counti;i++){
     binindex += parseInt(index).toString(2);//parseInt converts string into integers.
     var l_sign = readline.question("Enter the Length of signature ");
     var binl_sign='';
-    for(var j=parseInt(l_sign).toString(2).length;j<32;j++){
+    for(var j=parseInt(l_sign,16).toString(2).length;j<32;j++){
         binl_sign+='0';
     }
-    binl_sign += parseInt(l_sign).toString(2);
+    binl_sign += parseInt(l_sign,16).toString(2);
     var sign = readline.question("Enter the signature(in hex format) ");
     inp_data += binid + binindex + binl_sign + sign;
 }
