@@ -1,3 +1,11 @@
+
+/*SOLUTION DETAILS:
+1. Getting the timestamp using the nano-time library(in BigInt format) and then converting it into binary(8 bytes long).
+2. Getting the input data and concantenating it into a single variable after converting it into binary. (Extra zeroes are appended to the beginning of integers to make them exactly 4/8 bytes long).
+3. Getting the output data(no. of coins and directory of public key) and converting it into binary. (Extra zeroes are appended to the beginning of integers/characters to make them exactly 4/8 bytes long).
+4. Concantenating all these 3 strings into a buffer and calculating the SHA-256 hash of it.
+5. Storing the data in a binary file(.dat)format with the hash as it's name.*/
+
 var readline = require('readline-sync');
 const hash = require('crypto-js/sha256');
 var fs = require('fs');
@@ -39,14 +47,21 @@ for(var i=0;i<counti;i++){
         binindex+='0';
     }
     binindex += parseInt(index).toString(2);//parseInt converts string into integers.
-    var l_sign = readline.question("Enter the Length of signature ");
+    var l_sign = readline.question("Enter the Length of signature: ");
     var binl_sign='';
-    for(var j=parseInt(l_sign,16).toString(2).length;j<32;j++){
+    for(var j=parseInt(l_sign).toString(2).length;j<32;j++){
         binl_sign+='0';
     }
-    binl_sign += parseInt(l_sign,16).toString(2);
-    var sign = readline.question("Enter the signature(in hex format) ");
-    inp_data += binid + binindex + binl_sign + sign;
+    binl_sign += parseInt(l_sign).toString(2);
+    var sign = readline.question("Enter the signature(in hex format): ");
+    var binsign = parseInt(sign,16).toString(2);
+    var binsign_len = binsign.length;
+    var fbinsign='';
+    for(var q=binsign_len;q<l_sign*8;q++){
+        fbinsign+='0';
+    }
+    fbinsign+=binsign;
+    inp_data += binid + binindex + binl_sign + fbinsign;
 }
 // console.log(inp_data);
 var counto= readline.question('Enter the number of outputs: ');
@@ -54,13 +69,13 @@ var bincounto='';
 for(var i=parseInt(counto).toString(2).length;i<32;i++){
     bincounto+='0';
 }
-bincounto = parseInt(counto).toString(2);
+bincounto += parseInt(counto).toString(2);
 var out_data = bincounto;
 for(var i=0;i<counto;i++){
     console.log('Enter the number of coins for output #',i+1,':');
     var coins = readline.question();
     var bicoins='';
-    for(var j=parseInt(bicoins).toString(2).length;j<64;j++){
+    for(var j=parseInt(coins).toString(2).length;j<64;j++){
         bicoins+='0';
     }
     bicoins += parseInt(coins).toString(2);
@@ -74,6 +89,9 @@ for(var i=0;i<counto;i++){
     binlkey += parseInt(lkey).toString(2);
     var binpubkey='';
     for(var j=0;j<lkey;j++){
+        for(var q=PUBKEY[j].charCodeAt(0).toString(2).length;q<8;q++){
+            binpubkey+='0';
+        }
         binpubkey+= PUBKEY[j].charCodeAt(0).toString(2);
     }
     out_data += bicoins + binlkey + binpubkey;
@@ -83,5 +101,6 @@ const transaction_data = Buffer.from(bincurrtime + inp_data + out_data);
 
 var transaction_id = hash(transaction_data).toString();
 transaction_id+='.dat';
-fs.writeFileSync(transaction_id,transaction_data);
+var path = "./"+transaction_id;
+fs.writeFileSync(path,transaction_data,"utf8");
 // console.log(transaction_id,' ',transaction_data);
