@@ -7,8 +7,7 @@ Steps to run:
 
 2. Open a web browser and go to the url: `localhost:8787/hash`
 3. Enter the data (only string).
-4. After pressing Submit, the hash is displayed on the browser. And the console also displays:
-	Console: 
+4. After pressing Submit, the hash is displayed on the browser. And the console also displays: 
 	```
 	If I'm printed, this works all right.
 	
