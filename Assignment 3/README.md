@@ -1,5 +1,6 @@
 Input for the corresponding transaction data file (Public key from Assignment 2 was used):
 
+```
 PS C:\Users\kusha\Desktop\BlockChain\BlockChain\assignment3> node '.\Create _Binary_file.js'
 Enter the number of inputs: 2
 Enter Transaction ID(in hex format) for input # 1 :
@@ -21,3 +22,4 @@ Enter the complete directory of the public key(.pem file): C:\Users\kusha\Deskto
 Enter the number of coins for output # 2 :
 779841
 Enter the complete directory of the public key(.pem file): C:\Users\kusha\Desktop\BlockChain\BlockChain\Assignment2\public_key.pem
+```
