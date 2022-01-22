@@ -5,7 +5,7 @@
 3. Getting the output data(no. of coins and directory of public key) and converting it into binary. (Extra zeroes are appended to the beginning of integers/characters to make them exactly 4/8 bytes long).
 4. Concantenating all these 3 strings into a buffer and calculating the SHA-256 hash of it.
 5. Storing the data in a binary file(.dat)format with the hash as it's name.*/
-
+ 
 var readline = require('readline-sync');
 const crypto = require('crypto');
 var fs = require('fs');
