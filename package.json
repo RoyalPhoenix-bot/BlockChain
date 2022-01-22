@@ -32,10 +32,14 @@
   },
   "bundleDependencies": false,
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "classes": "^0.3.0",
     "crypto": "^1.0.1",
+    "express": "^4.17.1",
     "fs": "0.0.1-security",
     "nano-time": "^1.0.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "version": "^0.1.2"
   },
   "deprecated": false,
   "description": "JavaScript library of crypto standards.",
