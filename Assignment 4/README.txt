@@ -1,5 +1,5 @@
 This is the output given by the code (transaction data file from Assignment 3 is used):
-
+ 
 PS C:\Users\kusha\Desktop\BlockChain\BlockChain\Assignment4> node .\read_data.js
 Enter the transaction id: 4ea5c508a6566e76240543f8feb06fd457777be39549c4016436afda65d2330e
 Enter the file directory: C:\Users\kusha\Desktop\BlockChain\BlockChain\Assignment3
