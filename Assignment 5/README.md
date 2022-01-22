@@ -1,3 +1,4 @@
+```
 INPUT:
   Index: 7
   Hash of parent block: 41a82375fb23603aeb2129e6d05e2b4eb63b576db435f8e4ff2ad62ad4200fda
@@ -23,3 +24,4 @@ OUTPUTS
 	Hash: 00000009b712c6fa02807afdecac0f1f7b811309a83183b6d55cf620cee729f2
 	Time taken: 7.1 seconds (7111361000 nanoseconds) [//Extremely lucky XD]
 	Device Speed: ~101,583 iterations per second
+```
