@@ -23,5 +23,5 @@ Data is:  {"data":"The Answer to Life, the Universe And Everything is 42!"}
 ### Implementing the local server with a Web Browser
 
 Implemented the local server which takes a string input and outputs the hash, through an elementary interaction with the web browser.
-
+The folder [Trial code with Browser](./Trial%20code%20with%20Browser) contains instructions about how to run the code.
 

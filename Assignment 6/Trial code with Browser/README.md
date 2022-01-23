@@ -6,7 +6,7 @@ Steps to run:
 	Console: `If I'm printed, the Local Node is Active.` (It listens on node 8787).
 
 2. Open a web browser and go to the url: `localhost:8787/hash`
-3. Enter the data (only string).
+3. Enter the data (only string) on the browser.
 4. After pressing Submit, the hash is displayed on the browser. And the console also displays: 
 	```
 	If I'm printed, the Local Node is Active.
