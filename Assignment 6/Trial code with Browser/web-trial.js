@@ -21,4 +21,4 @@ app.post("/hash",function(req,res){
     //res.send(JSON.stringify({"hash":hash}),'\n');
     console.log(JSON.stringify({"hash":hash}),'\n');
 })
-app.listen(8787, ()=>console.log("If I'm printed, the Local Node is Active.\n"));
+app.listen(8787, ()=>console.log("If I'm printed, the Local Node is Active.\n")); 

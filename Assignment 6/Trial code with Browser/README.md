@@ -9,8 +9,9 @@ Steps to run:
 3. Enter the data (only string).
 4. After pressing Submit, the hash is displayed on the browser. And the console also displays: 
 	```
-	If I'm printed, this works all right.
+	If I'm printed, the Local Node is Active.
 	
 	Data is:  {"data":"The Answer to Life, the Universe And Everything is 42!"}
         {"hash":"be8f737bb76c34cfa62bd1a7890c346ee469dd6586ae9d5d01ffeeb61273ca35"}
 	```
+ 
